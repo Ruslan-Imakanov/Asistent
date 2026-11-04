@@ -143,9 +143,13 @@
 ## 7. Соцсети — только черновики
 
 Владелец решил: **публикует он сам**. Олег готовит не больше 2 постов в день (`posts_count`):
-- Typefully: `create_draft` **без** даты публикации и без отправки в очередь.
-- Metricool (Instagram/Threads): только `createScheduledPostForReview` — пост ждёт одобрения владельца.
-  `createScheduledPost`, `sendScheduledPostForReview` и любые прямые публикации — запрещены.
+- Metricool (Instagram/Threads, `blogId` 7812861, часовой пояс `Asia/Qyzylorda`): `createScheduledPost`
+  **только** с `"draft": true` и `"autoPublish": false` в `info` — это черновик, который сам не публикуется.
+  Режим одобрения (`createScheduledPostForReview`) на бесплатном тарифе владельца не работает.
+  Любые другие публикации (`draft: false`, `autoPublish: true`, «опубликовать сейчас») — запрещены.
+  Для Instagram обязательно изображение и `"isAiGenerated": true` в `instagramData`.
+- Typefully: сейчас в нём нет подключённых аккаунтов соцсетей — не используйте, пока владелец их не подключит.
+  Если подключит: `create_draft` **без** `publish_at` и `plan_at`.
 - Картинки — из Unsplash (с указанием автора, если требуется) или Canva; без чужих логотипов и без людей
   без разрешения.
 
