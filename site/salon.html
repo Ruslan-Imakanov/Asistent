@@ -1,0 +1,337 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Салон «Сезон»</title>
+<meta name="description" content="Салон красоты «Сезон» в Алматы: волосы, ногти, уход за лицом. Демо-лендинг «Нейро Офиса».">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BeautySalon","name":"Салон «Сезон» (демо)","address":{"@type":"PostalAddress","addressLocality":"Алматы","addressCountry":"KZ","streetAddress":"пр. Абая, 150 (демо)"},"telephone":"+7 700 000 00 00","openingHours":"Mo-Su 10:00-21:00","priceRange":"₸₸"}
+</script>
+<style>
+/* Layout: editorial split hero → services with photos → salon story → price list → reviews → booking → contacts */
+:root {
+  color-scheme: light;
+  --milk: #f6efe9; --paper: #fffaf6; --ink: #2a1f23; --soft: #6e5c62; --rose: #a8526a; --rose-d: #8a3f55; --line: #e6d8d0; --sage: #5f7a6b;
+  --display: "Prata", Georgia, "Times New Roman", serif;
+  --body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--milk); color: var(--ink); font: 16px/1.6 var(--body); }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.demo { background: var(--ink); color: #f6efe9; font-size: 13px; text-align: center; padding: 7px 16px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; margin: 0; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--rose); font-weight: 700; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border-radius: 999px; font-weight: 700; text-decoration: none; border: 1.5px solid var(--ink); transition: transform .15s, background .15s; }
+.btn:hover { transform: translateY(-1px); }
+.btn.fill { background: var(--rose); border-color: var(--rose); color: #fff; }
+.btn.fill:hover { background: var(--rose-d); }
+.btn:focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; }
+
+header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--milk) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.logo { font-family: var(--display); font-size: 26px; text-decoration: none; letter-spacing: .02em; }
+.logo span { color: var(--rose); }
+nav { display: flex; gap: 26px; font-weight: 500; font-size: 15px; }
+nav a { text-decoration: none; }
+nav a:hover { color: var(--rose); }
+header .btn { padding: 10px 18px; font-size: 14px; }
+
+.hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; padding-block: 56px 72px; }
+.hero h1 { font-size: clamp(40px, 6vw, 78px); line-height: 1.02; margin: 14px 0 20px; }
+.hero h1 em { font-style: normal; color: var(--rose); }
+.hero p.lead { font-size: 19px; color: var(--soft); max-width: 34ch; margin: 0 0 28px; }
+.hero .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 34px; font-size: 14px; color: var(--soft); }
+.facts b { display: block; color: var(--ink); font-size: 15px; }
+.hero-img { position: relative; }
+.hero-img img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 85%; border-radius: 240px 240px 20px 20px; }
+.badge { position: absolute; left: -22px; bottom: 34px; background: var(--paper); border-radius: 16px; padding: 14px 18px; box-shadow: 0 18px 40px #2a1f2322; font-size: 14px; max-width: 220px; }
+.badge b { font-family: var(--display); font-size: 22px; display: block; color: var(--rose); font-weight: 400; }
+
+.perks { background: var(--paper); border-block: 1px solid var(--line); }
+.perks .wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding-block: 28px; }
+.perk { display: flex; gap: 14px; align-items: flex-start; }
+.perk i { flex: none; width: 40px; height: 40px; border-radius: 50%; background: #f1dfe3; color: var(--rose); display: grid; place-items: center; font-style: normal; font-weight: 700; }
+.perk b { display: block; }
+.perk span { color: var(--soft); font-size: 14px; }
+
+section.block { padding-block: 84px; }
+.head { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 36px; }
+.head h2 { font-size: clamp(32px, 4vw, 50px); line-height: 1.08; margin-top: 10px; }
+.head p { color: var(--soft); max-width: 42ch; margin: 0; }
+
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.svc { background: var(--paper); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--line); }
+.svc img { aspect-ratio: 4 / 3.4; height: auto; object-fit: cover; width: 100%; transition: transform .5s; }
+.svc:hover img { transform: scale(1.03); }
+.svc .ph { overflow: hidden; }
+.svc .in { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.svc h3 { font-size: 28px; }
+.svc ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.svc li { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed var(--line); padding-bottom: 8px; font-size: 15px; }
+.svc li b { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.svc a.more { margin-top: auto; color: var(--rose); font-weight: 700; text-decoration: none; }
+
+.story { background: var(--ink); color: #f6efe9; }
+.story .wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+.story img { border-radius: 20px; aspect-ratio: 3 / 2; object-fit: cover; width: 100%; }
+.story h2 { font-size: clamp(30px, 3.6vw, 46px); line-height: 1.1; margin: 12px 0 18px; }
+.story p { color: #d9cbc4; margin: 0 0 14px; }
+.story .eyebrow { color: #e7a9b9; }
+.story .nums { display: flex; gap: 34px; margin-top: 26px; flex-wrap: wrap; }
+.story .nums b { font-family: var(--display); font-weight: 400; font-size: 38px; display: block; color: #fff; }
+.story .nums span { font-size: 13px; color: #c8b7b0; }
+
+.prices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 56px; }
+.prices h3 { font-size: 24px; margin: 22px 0 10px; color: var(--rose-d); }
+.row { display: flex; align-items: baseline; gap: 10px; padding: 9px 0; }
+.row .dots { flex: 1; border-bottom: 1px dotted #c9b6ad; transform: translateY(-4px); }
+.row b { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.row small { color: var(--soft); }
+
+.reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.rev { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+.rev .stars { color: #d39b2a; letter-spacing: 2px; }
+.rev p { margin: 0; font-size: 15px; }
+.rev .who { margin-top: auto; font-size: 14px; color: var(--soft); }
+.note { font-size: 13px; color: var(--soft); margin-top: 16px; }
+
+.book { background: var(--paper); border-radius: 28px; border: 1px solid var(--line); display: grid; grid-template-columns: .9fr 1.1fr; overflow: hidden; }
+.book .pic { position: relative; min-height: 320px; }
+.book .pic img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; min-height: 320px; }
+.book form { padding: 40px; display: grid; gap: 14px; }
+.book h2 { font-size: clamp(28px, 3.4vw, 42px); }
+label { font-size: 13px; font-weight: 700; color: var(--soft); display: grid; gap: 6px; }
+input, select { font: inherit; padding: 13px 14px; border-radius: 12px; border: 1.5px solid var(--line); background: #fff; color: var(--ink); width: 100%; }
+input:focus, select:focus { outline: none; border-color: var(--rose); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.hint { font-size: 13px; color: var(--soft); margin: 0; }
+
+.contacts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.ct { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+.ct h3 { font-size: 22px; margin-bottom: 8px; }
+.ct p { margin: 0 0 6px; color: var(--soft); }
+.ct a { color: var(--rose); font-weight: 700; }
+
+footer { border-top: 1px solid var(--line); padding-block: 28px 90px; font-size: 13px; color: var(--soft); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+.float { position: fixed; right: calc(18px + env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); background: #25d366; color: #fff; padding: 14px 20px; border-radius: 999px; font-weight: 700; text-decoration: none; box-shadow: 0 12px 28px #0003; z-index: 30; }
+
+@media (max-width: 900px) {
+  nav { display: none; }
+  .hero .wrap, .story .wrap, .book { grid-template-columns: 1fr; }
+  .hero .wrap { padding-block: 28px 56px; gap: 32px; }
+  .badge { left: 12px; }
+  .services, .reviews, .contacts, .perks .wrap { grid-template-columns: 1fr; }
+  .prices { grid-template-columns: 1fr; }
+  .book .pic { display: none; }
+  .book form { padding: 26px 20px; }
+  section.block { padding-block: 60px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .svc img, .btn { transition: none; } }
+</style>
+
+</head><body><div class="demo">Демо-сайт для примера: салон «Сезон» вымышленный, цены и отзывы — образец. Сделано командой «Нейро Офис».</div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">сезон<span>.</span></a>
+    <nav aria-label="Разделы"><a href="#services">Услуги</a><a href="#about">О салоне</a><a href="#prices">Цены</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+    <a class="btn fill" href="#book">Записаться</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Салон красоты · Алматы</div>
+      <h1>Красота без спешки и <em>без компромиссов</em></h1>
+      <p class="lead">Волосы, ногти и уход за кожей в одном месте. Мастера с опытом, стерильные инструменты и время, которое вы проводите только для себя.</p>
+      <div class="btns">
+        <a class="btn fill" href="#book">Записаться онлайн</a>
+        <a class="btn" href="#prices">Цены на услуги</a>
+      </div>
+      <div class="facts">
+        <div><b>Ежедневно</b>10:00 – 21:00</div>
+        <div><b>пр. Абая, 150</b>вход со двора, 2 этаж</div>
+        <div><b>Парковка</b>бесплатная у входа</div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1610992015762-45dca7fa3a85?auto=format&fit=crop&w=1000&q=70" alt="Аккуратный нюдовый маникюр крупным планом" width="900" height="1125">
+      <div class="badge"><b>9 000 ₸</b>маникюр с покрытием — около 1,5 часа</div>
+    </div>
+  </div>
+</section>
+
+<div class="perks">
+  <div class="wrap">
+    <div class="perk"><i>✓</i><div><b>Стерильно всегда</b><span>Инструменты из крафт-пакета вскрываем при вас</span></div></div>
+    <div class="perk"><i>★</i><div><b>Опытные мастера</b><span>Каждый мастер — от 5 лет практики</span></div></div>
+    <div class="perk"><i>⏱</i><div><b>Запись за минуту</b><span>Оставьте заявку — подтвердим в WhatsApp</span></div></div>
+  </div>
+</div>
+
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow">Услуги</div><h2>Всё для вашего образа</h2></div>
+      <p>Подберём уход и формат под вашу задачу. Цены фиксированные — без сюрпризов после процедуры.</p>
+    </div>
+    <div class="services">
+      <article class="svc">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1707812343087-c9ff9e5abb43?auto=format&fit=crop&w=1000&q=70" alt="Мастер делает окрашивание волос в фольге" loading="lazy" width="900" height="1350"></div>
+        <div class="in">
+          <h3>Волосы</h3>
+          <ul><li>Женская стрижка<b>8 000 ₸</b></li><li>Окрашивание в один тон<b>от 25 000 ₸</b></li><li>Укладка<b>6 000 ₸</b></li></ul>
+          <a class="more" href="#book" data-service="Окрашивание">Записаться →</a>
+        </div>
+      </article>
+      <article class="svc">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1522336552288-a9cc74a8dfd7?auto=format&fit=crop&w=1000&q=70" alt="Флаконы лака для ногтей нежных оттенков" loading="lazy" width="900" height="1350"></div>
+        <div class="in">
+          <h3>Ногти</h3>
+          <ul><li>Маникюр с покрытием<b>9 000 ₸</b></li><li>Педикюр с покрытием<b>11 000 ₸</b></li><li>Дизайн (1 ноготь)<b>от 500 ₸</b></li></ul>
+          <a class="more" href="#book" data-service="Маникюр с покрытием">Записаться →</a>
+        </div>
+      </article>
+      <article class="svc">
+        <div class="ph"><img src="https://images.unsplash.com/photo-1761718210089-ba3bb5ccb54f?auto=format&fit=crop&w=1000&q=70" alt="Косметолог наносит маску во время ухода за лицом" loading="lazy" width="900" height="1350"></div>
+        <div class="in">
+          <h3>Лицо</h3>
+          <ul><li>Комбинированная чистка<b>15 000 ₸</b></li><li>Увлажняющий уход<b>18 000 ₸</b></li><li>Оформление бровей<b>5 000 ₸</b></li></ul>
+          <a class="more" href="#book" data-service="Уход за лицом">Записаться →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block story" id="about">
+  <div class="wrap">
+    <img src="https://images.unsplash.com/photo-1626383137804-ff908d2753a2?auto=format&fit=crop&w=1400&q=70" alt="Светлый зал салона с креслами и зеркалами" loading="lazy" width="1200" height="800">
+    <div>
+      <div class="eyebrow">О салоне</div>
+      <h2>Место, где можно выдохнуть</h2>
+      <p>Светлый зал с большими окнами, удобные кресла и кофе, пока ждёте. Мы не ставим записи впритык, поэтому мастер никуда не торопится.</p>
+      <p>Работаем на профессиональных материалах и честно говорим, какой результат реален именно для вас.</p>
+      <div class="nums"><div><b>6</b><span>мастеров</span></div><div><b>3</b><span>направления</span></div><div><b>7/7</b><span>без выходных</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="prices">
+  <div class="wrap">
+    <div class="head"><div><div class="eyebrow">Прайс</div><h2>Цены на услуги</h2></div><p>Точную стоимость окрашивания мастер назовёт после консультации — она бесплатная.</p></div>
+    <div class="prices">
+      <div>
+        <h3>Волосы</h3>
+        <div class="row">Женская стрижка<span class="dots"></span><b>8 000 ₸</b></div>
+        <div class="row">Мужская стрижка<span class="dots"></span><b>5 000 ₸</b></div>
+        <div class="row">Окрашивание в один тон <small>до плеч</small><span class="dots"></span><b>25 000 ₸</b></div>
+        <div class="row">Сложное окрашивание<span class="dots"></span><b>от 45 000 ₸</b></div>
+        <div class="row">Укладка<span class="dots"></span><b>6 000 ₸</b></div>
+        <h3>Лицо и брови</h3>
+        <div class="row">Комбинированная чистка<span class="dots"></span><b>15 000 ₸</b></div>
+        <div class="row">Увлажняющий уход<span class="dots"></span><b>18 000 ₸</b></div>
+        <div class="row">Оформление бровей<span class="dots"></span><b>5 000 ₸</b></div>
+      </div>
+      <div>
+        <h3>Ногти</h3>
+        <div class="row">Маникюр без покрытия<span class="dots"></span><b>5 000 ₸</b></div>
+        <div class="row">Маникюр с покрытием<span class="dots"></span><b>9 000 ₸</b></div>
+        <div class="row">Педикюр с покрытием<span class="dots"></span><b>11 000 ₸</b></div>
+        <div class="row">Наращивание<span class="dots"></span><b>от 14 000 ₸</b></div>
+        <div class="row">Снятие покрытия<span class="dots"></span><b>1 500 ₸</b></div>
+        <div class="row">Дизайн <small>1 ноготь</small><span class="dots"></span><b>от 500 ₸</b></div>
+        <h3>Комплексы</h3>
+        <div class="row">Маникюр + педикюр<span class="dots"></span><b>18 500 ₸</b></div>
+        <div class="row">Стрижка + укладка<span class="dots"></span><b>12 500 ₸</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><div><div class="eyebrow">Отзывы</div><h2>Что говорят гости</h2></div></div>
+    <div class="reviews">
+      <div class="rev"><div class="stars">★★★★★</div><p>Пришла на окрашивание, мастер честно сказала, что за один раз из чёрного в блонд не получится, и предложила план на два визита. Результат — как хотела.</p><div class="who">Айгерим · 2GIS</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>Маникюр держится третью неделю. Понравилось, что инструменты открыли при мне из пакета.</p><div class="who">Дана · 2GIS</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>Удобно записываться через WhatsApp, подтвердили за 10 минут. Парковка прямо у входа.</p><div class="who">Мадина · Instagram</div></div>
+    </div>
+    <p class="note">Это пример блока отзывов. На вашем сайте здесь будут настоящие отзывы ваших клиентов из 2GIS и Instagram.</p>
+  </div>
+</section>
+
+<section class="block" id="book" style="padding-top:0">
+  <div class="wrap">
+    <div class="book">
+      <div class="pic"><img src="https://images.unsplash.com/photo-1707812343087-c9ff9e5abb43?auto=format&fit=crop&w=1000&q=70" alt="" loading="lazy" width="900" height="1350"></div>
+      <form id="bookForm" novalidate>
+        <div class="eyebrow">Онлайн-запись</div>
+        <h2>Запишитесь за минуту</h2>
+        <p class="hint">Заполните форму — откроется WhatsApp с готовым сообщением. Администратор подтвердит время.</p>
+        <div class="two">
+          <label for="fName">Имя<input id="fName" name="name" autocomplete="given-name" placeholder="Как к вам обращаться" required></label>
+          <label for="fPhone">Телефон<input id="fPhone" name="phone" type="tel" autocomplete="tel" placeholder="+7 7__ ___ __ __" required></label>
+        </div>
+        <label for="fService">Услуга
+          <select id="fService" name="service">
+            <option>Маникюр с покрытием</option><option>Педикюр с покрытием</option><option>Женская стрижка</option>
+            <option>Окрашивание</option><option>Уход за лицом</option><option>Оформление бровей</option><option>Нужна консультация</option>
+          </select>
+        </label>
+        <div class="two">
+          <label for="fDate">Дата<input id="fDate" name="date" type="date"></label>
+          <label for="fTime">Удобное время
+            <select id="fTime" name="time"><option>Утро (10–13)</option><option>День (13–17)</option><option>Вечер (17–21)</option></select>
+          </label>
+        </div>
+        <a class="btn fill" id="sendWa" href="https://wa.me/77000000000" target="_blank" rel="noopener" style="justify-content:center">Отправить заявку в WhatsApp</a>
+        <p class="hint" id="formNote">Нажимая кнопку, вы откроете WhatsApp — сообщение уйдёт только после того, как вы его отправите.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contacts" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><div><div class="eyebrow">Контакты</div><h2>Как нас найти</h2></div></div>
+    <div class="contacts">
+      <div class="ct"><h3>Адрес</h3><p>Алматы, пр. Абая, 150</p><p>Вход со двора, 2 этаж, вывеска «Сезон»</p><a href="https://2gis.kz/almaty" target="_blank" rel="noopener">Открыть в 2GIS →</a></div>
+      <div class="ct"><h3>Часы работы</h3><p>Ежедневно 10:00 – 21:00</p><p>Последняя запись — в 19:30</p></div>
+      <div class="ct"><h3>Связь</h3><p>+7 700 000 00 00</p><p><a href="https://wa.me/77000000000" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© Салон «Сезон» — демо-сайт. Пример услуги «Лендинг под ключ» от «Нейро Офиса».</span>
+    <span>Фото: Chelson Tamares, Ionela Mat, Element5 Digital, kimia kazemi, Giorgio Trovato / Unsplash</span>
+  </div>
+</footer>
+<a class="float" href="https://wa.me/77000000000" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">WhatsApp</a>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var date = $("fDate");
+  try { date.min = new Date().toISOString().slice(0, 10); } catch (e) {}
+  function build() {
+    var name = $("fName").value.trim(), phone = $("fPhone").value.trim();
+    var d = date.value ? new Date(date.value + "T12:00").toLocaleDateString("ru-RU", { day: "numeric", month: "long" }) : "любой день";
+    var text = "Здравствуйте! Хочу записаться в «Сезон».\nУслуга: " + $("fService").value + "\nКогда: " + d + ", " + $("fTime").value +
+      "\nИмя: " + (name || "—") + "\nТелефон: " + (phone || "—");
+    $("sendWa").href = "https://wa.me/77000000000?text=" + encodeURIComponent(text);
+  }
+  ["fName", "fPhone", "fService", "fDate", "fTime"].forEach(function (id) { $(id).addEventListener("input", build); $(id).addEventListener("change", build); });
+  $("bookForm").addEventListener("submit", function (e) { e.preventDefault(); });
+  document.querySelectorAll("[data-service]").forEach(function (a) {
+    a.addEventListener("click", function () { $("fService").value = a.dataset.service; build(); });
+  });
+  build();
+})();
+</script>
+</body></html>
