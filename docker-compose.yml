@@ -1,0 +1,11 @@
+services:
+  office:
+    build: .
+    restart: always            # офис поднимается сам после сбоя или перезагрузки сервера
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data            # база: задачи, переписка, продажи
+      - ./workspace:/app/workspace  # всё, что создают сотрудники
+      - ./config:/app/config        # правила и сотрудники

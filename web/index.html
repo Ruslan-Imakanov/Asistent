@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Нейро Офис</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">▣</span> <span id="company">AI Office</span>
+    <span id="status" class="pill">…</span><span id="demo" class="pill warn" hidden>ДЕМО</span></div>
+  <div class="stats">
+    <div class="stat"><small>Выручка</small><b id="revenue">0</b></div>
+    <div class="stat"><small>Продаж</small><b id="salesCount">0</b></div>
+    <div class="stat"><small>ИИ сегодня</small><b id="spend">$0</b><div class="meter"><i id="spendBar"></i></div></div>
+    <div class="stat"><small>Режим</small><b id="mode">—</b></div>
+  </div>
+  <div class="controls">
+    <button id="btnPause">⏸ Пауза</button>
+    <button id="btnResume">▶ Работать</button>
+    <button id="btnStop" class="danger">⛔ Стоп</button>
+  </div>
+</header>
+
+<main>
+  <section class="stage">
+    <canvas id="office" width="960" height="600"></canvas>
+    <div id="hint">Нажмите на сотрудника, чтобы увидеть его работу</div>
+  </section>
+
+  <aside class="panel">
+    <nav class="tabs">
+      <button data-tab="questions">Вопросы <span id="qBadge" class="badge" hidden>0</span></button>
+      <button data-tab="tasks" class="active">Задачи</button>
+      <button data-tab="comms">Переписка</button>
+      <button data-tab="sales">Продажи</button>
+      <button data-tab="feed">Лента</button>
+      <button data-tab="setup">Настройки</button>
+    </nav>
+
+    <div class="tab" id="tab-questions" hidden>
+      <p class="muted">Сюда агенты пишут только то, что по правилам решаете вы (деньги, договоры, возвраты).</p>
+      <div id="questions"></div>
+      <h3>Указание офису</h3>
+      <textarea id="directive" placeholder="Например: сделайте упор на лендинги для кофеен в Казани"></textarea>
+      <button id="btnDirective">Передать главному ассистенту</button>
+    </div>
+
+    <div class="tab" id="tab-tasks">
+      <div id="employeeCard" hidden></div>
+      <div id="kanban" class="kanban"></div>
+    </div>
+
+    <div class="tab" id="tab-comms" hidden>
+      <h3>Исходящие</h3><div id="outbox"></div>
+      <h3>Входящие</h3><div id="inbox"></div>
+    </div>
+
+    <div class="tab" id="tab-sales" hidden>
+      <h3>Продукты</h3><div id="products"></div>
+      <h3>Продажи</h3><div id="salesList"></div>
+      <h3>Клиенты (CRM)</h3><div id="contacts"></div>
+    </div>
+
+    <div class="tab" id="tab-feed" hidden><div id="feed" class="feed"></div></div>
+
+    <div class="tab" id="tab-setup" hidden>
+      <h3>Подключения</h3><div id="connectors"></div>
+      <p class="muted">Ключи задаются в файле <code>.env</code>, правила автономности — в <code>config/company.yaml</code>.
+        Без подключений сообщения сохраняются как «dry-run» и никуда не уходят.</p>
+      <h3>Входящее вручную</h3>
+      <input id="inFrom" placeholder="email или telegram id клиента">
+      <input id="inName" placeholder="имя">
+      <textarea id="inBody" placeholder="текст обращения (заявка с сайта, звонок…)"></textarea>
+      <button id="btnInbound">Добавить обращение</button>
+      <h3>Доступ</h3>
+      <button id="btnLogout">Сменить пароль доступа</button>
+    </div>
+  </aside>
+</main>
+<script src="/static/office.js"></script>
+</body>
+</html>
